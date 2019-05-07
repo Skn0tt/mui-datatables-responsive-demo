@@ -1,7 +1,7 @@
 This is a demo for the `customRowRender` feature request for [mui-datatables](https://github.com/gregnb/mui-datatables).
 
 It shows how you can effectively fit wide data on a narrow screen.
-Play around with the demo (you can find it on)
+Play around with the demo (you can find it at [https://mui-datatables-responsive-demo.skn0tt.now.sh](https://mui-datatables-responsive-demo.skn0tt.now.sh)), compare "stacked" mode and the card display.
 
 You may ask yourself: I can have the same space usage using the "stacked" mode, so why do I need this?
 
