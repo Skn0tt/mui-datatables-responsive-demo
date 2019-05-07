@@ -1,68 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a demo for the `customRowRender` feature request for [mui-datatables](https://github.com/gregnb/mui-datatables).
 
-## Available Scripts
+It shows how you can effectively fit wide data on a narrow screen.
+Play around with the demo (you can find it on)
 
-In the project directory, you can run:
+You may ask yourself: I can have the same space usage using the "stacked" mode, so why do I need this?
 
-### `npm start`
+I find the "stacked" mode to be hard to use on a small, cramped screen, since the text is too small and - well, the data ist stacked.
+See, tables are great because you can focus on just one column and scan through it until you find the row you search for.
+This can not be done in stacked mode since there are no more rows.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`customRowRender` allows you to have your own rendering for a row.
+Through this, you can create a Card-Like UI where each column has its own location.
+With the credit card in this example, it's the way the numbers are located that allow you to quickly pattern-match against them to find what you're searching.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You may now ask yourself: You could just use a normal list for this, why do you need a table?
 
-### `npm test`
+I still want to use the sorting and filtering system of mui-datatables, because my users know it.
+I don't want them to feel like they enter a different view in my app - just the presentation of the table rows should be changed.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+As you see, having a custom row-view for small screens can make UX for your apps a lot better.
+This is why I'd love to see `customRowRender` in `mui-datatables`! :smile:

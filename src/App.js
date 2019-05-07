@@ -3,6 +3,7 @@ import './App.css';
 import MuiDatatable from "mui-datatables";
 import UserCard from './UserCard';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { Switch, FormControlLabel, Typography } from '@material-ui/core';
 
 const cards = [
   {
@@ -38,12 +39,28 @@ function customRowRender({ data }) {
 
 function App() {
   const isNarrow = useMediaQuery('(max-width:600px)');
+  const [ enableStacked, setEnableStacked ] = React.useState(false);
 
   return (
     <div className="App">
       <MuiDatatable
-        key={"" + isNarrow}
-        title="Cards"
+        key={"" + isNarrow + "" + enableStacked}
+        title={(
+          <>
+            <Typography>
+              Cards
+            </Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={enableStacked}
+                  onChange={v => setEnableStacked(v.target.checked)}
+                />
+              }
+              label="use 'stacked' mode"
+            />
+          </>
+        )}
         data={cards}
         columns={[
           {
@@ -65,8 +82,8 @@ function App() {
         ]}
         options={{
           selectableRows: "none",
-          responsive: "scroll",
-          customRowRender: isNarrow ? customRowRender : undefined
+          responsive: enableStacked ? "stacked" : "scroll",
+          customRowRender: (enableStacked || !isNarrow) ? undefined : customRowRender
         }}
       />
     </div>
